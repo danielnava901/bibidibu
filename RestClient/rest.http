@@ -2,8 +2,8 @@ POST http://192.168.0.108:8000/hello/
 
 ####
 
-GET http://192.168.0.108:8000/incident/?new_date=12112
+GET http://0.0.0.0:8000/incident/
 
 ####
-POST http://192.168.0.108:8000/incident/?new_date=1577424935
+POST http://0.0.0.0:8000/incident/?new_date=1578347717
 

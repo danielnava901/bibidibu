@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 
 
 /**
- * @Route("/incident", name="incident")
+ * @Route("/incident")
  */
 class IncidentController extends AbstractController
 {
@@ -18,11 +18,11 @@ class IncidentController extends AbstractController
     /**
      * @Route("/", name="incident_index", methods={"GET"})
      */
-    public function index(Request $request)
+    public function index(Request $request, LoggerInterface $logger)
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $this->getDoctrine()->getRepository(Incident::class);
-
+        $logger->debug("asadadadasdasdada");
 
         $incidents = $repository->findAll();
 
@@ -90,9 +90,7 @@ class IncidentController extends AbstractController
         return $this->json([
             'code' => 200,
             'msg' => 'success',
-            'data' => [
-                'incidents' => $incidents
-            ]
+            'incidents' => $incidents,
         ]);
     }
 
